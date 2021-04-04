@@ -1,1 +1,1 @@
-### neo4j-graphql-tag
+### cypher-tag
