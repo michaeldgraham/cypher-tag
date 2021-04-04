@@ -1,0 +1,24 @@
+{
+  "name": "cypher-tag",
+  "version": "1.0.0",
+  "description": "A template literal tag for Cypher in GraphQL.",
+  "main": "./index.js",
+  "type": "commonjs",
+  "scripts": {
+    "build-esm": "tsc -p tsconfig.json",
+    "build-cjs": "tsc -p tsconfig-cjs.json"
+  },
+  "keywords": [
+    "GraphQL",
+    "Cypher",
+    "Template",
+    "Literal"
+  ],
+  "author": "Michael Graham",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^14.14.37",
+    "tsc": "^1.20150623.0",
+    "typescript": "^4.2.3"
+  }
+}
