@@ -10,7 +10,7 @@ directive @cypher(statement: String!) on FIELD_DEFINITION ...
 
 But there is no syntax highlighting for Cypher within GraphQL and attempting to define a `cypher` or `cql` tag must handle for nested composition. 
 ## Syntax Highlighting
-If you install the [Cypher Query Language Tools for Neo4j](https://marketplace.visualstudio.com/items?itemName=AnthonyJGatlin.vscode-cypher-query-language-tools) extension then syntax highlighting will be supported when using the `cql` template literal tag.
+If you install the [Cypher Query Language Tools for Neo4j](https://marketplace.visualstudio.com/items?itemName=AnthonyJGatlin.vscode-cypher-query-language-tools) extension, then syntax highlighting will be supported when using the `cql` template literal tag.
 
 #### Not Highlighted
 
