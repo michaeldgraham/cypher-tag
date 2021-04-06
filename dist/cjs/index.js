@@ -1,26 +1,30 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const strip_indent_1 = __importDefault(require("strip-indent"));
 const cql = (statement, ...substitutions) => {
     const BLOCK_QUOTE = `"""`;
     // Get the array of string literals
     const literals = statement.raw;
     // Add each substitution inbetween all
-    const formatLiteral = literal => literal.split("\n").map(literal => literal.trim()).join("\n");
     const composed = substitutions.reduce((composed, substitution, index) => {
         // Format and add the string literal
-        composed.push(formatLiteral(literals[index]));
+        composed.push(strip_indent_1.default(literals[index]));
         if (substitution) {
-            substitution = substitution.trim();
-            if (substitution.startsWith(BLOCK_QUOTE) && substitution.endsWith(BLOCK_QUOTE)) {
+            const trimmed = substitution.trim();
+            if (trimmed.startsWith(BLOCK_QUOTE) && trimmed.endsWith(BLOCK_QUOTE)) {
                 // Removes GraphQL block quotes from nested compilation
                 substitution = substitution.substr(3).slice(0, -3);
             }
-            composed.push(`\n${substitution}\n`);
+            composed.push(`\n${strip_indent_1.default(substitution)}\n`);
         }
         return composed;
     }, []);
     // Format and add the last literal
-    composed.push(formatLiteral(literals[literals.length - 1]));
+    composed.push(strip_indent_1.default(literals[literals.length - 1]));
+    // return `${BLOCK_QUOTE}${composed.join('')}${BLOCK_QUOTE}`;
     return `${BLOCK_QUOTE}${composed.join('').trim()}${BLOCK_QUOTE}`;
 };
 module.exports = cql;
