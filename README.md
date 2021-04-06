@@ -15,7 +15,7 @@ If you install the [Cypher Query Language Tools for Neo4j](https://marketplace.v
 ## Example 
 #### Not Highlighted
 
-![Not Highlighted](https://github.com/michaeldgraham/graphql-workspaces/blob/main/packages/cli/no-highlight.png?raw=true)
+![Not Highlighted](https://github.com/michaeldgraham/cypher-tag/blob/main/no-highlight.png?raw=true)
 
 When using `cql`, the tagged template literal is wrapped with a GraphQL [Block String](https://spec.graphql.org/June2018/#sec-String-Value) when compiled. Nested compilations are also supported, allowing for Cypher statements to be progressively composed and injected as a variable.
 
@@ -40,7 +40,7 @@ type Type {
 
 #### Highlighted
 
-![Highlighted](https://github.com/michaeldgraham/graphql-workspaces/blob/main/packages/cli/highlighted.png?raw=true)
+![Highlighted](https://github.com/michaeldgraham/cypher-tag/blob/main/highlighted.png?raw=true)
 
 ## Roadmap
   * Static validation of Cypher in string literals tagged with `cql`
