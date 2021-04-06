@@ -1,6 +1,6 @@
 {
   "name": "cypher-tag",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A template literal tag for Cypher in GraphQL.",
   "main": "./dist/cjs/index.js",
   "exports": {
