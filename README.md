@@ -46,9 +46,8 @@ type Type {
 #### Highlighted
 
 ![Highlighted](https://github.com/michaeldgraham/cypher-tag/blob/main/highlighted.png?raw=true)
-One caveat with the VSCode extension is that syntax highlighting breaks when `cql` is used on a variable but has a space behind it.
 # Composition
-You can use the `cql` tag to compose the Cypher of another `cql` tag. This enables composition and reuse of Cypher template variables, perhaps while using imperative tooling, making your `@cypher` directives [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
+You can use the `cql` tag to compose the Cypher of another `cql` tag. This enables composition and reuse of Cypher template variables, perhaps while using imperative tooling, making your `@cypher` directives [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself). One caveat with the VSCode extension is that syntax highlighting breaks when `cql` is used on a variable but has a space behind it.
 
 ![Composition](https://github.com/michaeldgraham/cypher-tag/blob/main/composition.png?raw=true)
 
