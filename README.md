@@ -8,11 +8,10 @@ The [neo4j-graphql-js](https://www.npmjs.com/package/neo4j-graphql-js) and [@neo
 directive @cypher(statement: String!) on FIELD_DEFINITION ...
 ```
 
-But there is no syntax highlighting for Cypher within GraphQL.
-## Requirements
+But there is no syntax highlighting for Cypher within GraphQL and attempting to define a `cypher` or `cql` tag must handle for nested composition. 
+## Syntax Highlighting
 If you install the [Cypher Query Language Tools for Neo4j](https://marketplace.visualstudio.com/items?itemName=AnthonyJGatlin.vscode-cypher-query-language-tools) extension then syntax highlighting will be supported when using the `cql` template literal tag.
 
-## Example 
 #### Not Highlighted
 
 ![Not Highlighted](https://github.com/michaeldgraham/cypher-tag/blob/main/no-highlight.png?raw=true)
@@ -21,6 +20,12 @@ When using `cql`, the tagged template literal is wrapped with a GraphQL [Block S
 
 So instead of writing:
 
+```graphql
+type Type {
+  field: OutputType @cypher(statement: " ... ")
+}
+```
+Or writing: 
 ```graphql
 type Type {
   field: OutputType @cypher(statement: """
@@ -41,6 +46,11 @@ type Type {
 #### Highlighted
 
 ![Highlighted](https://github.com/michaeldgraham/cypher-tag/blob/main/highlighted.png?raw=true)
+
+# Composition
+You can use the `cql` tag to compose the Cypher of another `cql` tag. This enables composition and reuse of Cypher template variables, perhaps while using imperative tooling, making your `@cypher` directives [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
+
+![Composition](https://github.com/michaeldgraham/cypher-tag/blob/main/composition.png?raw=true)
 
 ## Roadmap
   * Static validation of Cypher in string literals tagged with `cql`

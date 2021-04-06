@@ -14,12 +14,12 @@ const cql = (statement, ...substitutions) => {
                 // Removes GraphQL block quotes from nested compilation
                 substitution = substitution.substr(3).slice(0, -3);
             }
-            composed.push(`\n${stripIndent(substitution)}\n`);
+            composed.push(`\n${stripIndent(substitution)}`);
         }
         return composed;
     }, []);
     // Format and add the last literal
-    composed.push(stripIndent(literals[literals.length - 1]));
+    composed.push(`\n${stripIndent(literals[literals.length - 1])}`);
     // return `${BLOCK_QUOTE}${composed.join('')}${BLOCK_QUOTE}`;
     return `${BLOCK_QUOTE}${composed.join('').trim()}${BLOCK_QUOTE}`;
 };
