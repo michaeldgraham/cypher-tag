@@ -1,4 +1,4 @@
-import stripIndent from 'strip-indent';
+import stripIndent from "strip-indent";
 const cql = (statement, ...substitutions) => {
     const BLOCK_QUOTE = `"""`;
     // Get the array of string literals
@@ -13,13 +13,13 @@ const cql = (statement, ...substitutions) => {
                 // Removes GraphQL block quotes from nested compilation
                 substitution = substitution.substr(3).slice(0, -3);
             }
+            // Format and add this substitution
             composed.push(`\n${stripIndent(substitution)}`);
         }
         return composed;
     }, []);
     // Format and add the last literal
     composed.push(`\n${stripIndent(literals[literals.length - 1])}`);
-    // return `${BLOCK_QUOTE}${composed.join('')}${BLOCK_QUOTE}`;
-    return `${BLOCK_QUOTE}${composed.join('').trim()}${BLOCK_QUOTE}`;
+    return `${BLOCK_QUOTE}${composed.join("").trim()}${BLOCK_QUOTE}`;
 };
 export default cql;
