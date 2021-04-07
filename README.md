@@ -1,4 +1,4 @@
-## cypher-tag
+## [cypher-tag](https://www.npmjs.com/package/cypher-tag)
 
 A JavaScript template literal tag for Cypher in GraphQL.
 ## Motivation
